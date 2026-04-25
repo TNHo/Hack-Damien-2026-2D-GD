@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bh65op3cc6bj6"]
+
+[ext_resource type="Script" uid="uid://dhqtk2diyng1q" path="res://sprite_2d.gd" id="1_var0u"]
+[ext_resource type="Script" uid="uid://b35mmhesp344l" path="res://camera_2d.gd" id="2_ka5y7"]
+
+[node name="ColorRect" type="ColorRect" unique_id=584865106]
+z_index = -10
+anchors_preset = -1
+anchor_left = -0.062000003
+anchor_top = -0.087000005
+offset_left = -396.576
+offset_top = -508.624
+offset_right = 866.0
+offset_bottom = 289.0
+color = Color(0.79607844, 1, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2107737118]
+script = ExtResource("1_var0u")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=584817838]
+scroll_offset = Vector2(335, 240)
+
+[node name="Node2D" type="Node2D" parent="Parallax2D" unique_id=652260099]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=85838124]
+position = Vector2(228, 632)
+script = ExtResource("2_ka5y7")
