@@ -1,7 +1,41 @@
-[gd_scene format=3 uid="uid://txbbrd0dyla4"]
+[gd_scene format=3 uid="uid://c276p4o3mkfsf"]
 
-[ext_resource type="Script" uid="uid://cnbg36e1u0pvo" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://dlh2534rwc6d8" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://b5625cm1k4s85" path="res://ground.png" id="3_epypp"]
+
+[sub_resource type="GDScript" id="GDScript_0hol4"]
+script/source = "extends Node2D
+
+func _draw():
+	# blocky clouds
+	draw_rect(Rect2(100, 80, 32, 16), Color.WHITE)
+	draw_rect(Rect2(132, 64, 32, 32), Color.WHITE)
+	draw_rect(Rect2(164, 80, 32, 16), Color.WHITE)
+
+	draw_rect(Rect2(500, 120, 32, 16), Color.WHITE)
+	draw_rect(Rect2(532, 104, 32, 32), Color.WHITE)
+	draw_rect(Rect2(564, 120, 32, 16), Color.WHITE)
+
+	# far mountains
+	draw_rect(Rect2(0, 320, 64, 64), Color.DARK_SLATE_GRAY)
+	draw_rect(Rect2(64, 272, 64, 112), Color.DARK_SLATE_GRAY)
+	draw_rect(Rect2(128, 224, 64, 160), Color.DARK_SLATE_GRAY)
+	draw_rect(Rect2(192, 272, 64, 112), Color.DARK_SLATE_GRAY)
+	draw_rect(Rect2(256, 320, 64, 64), Color.DARK_SLATE_GRAY)
+
+	# ground-colored horizon
+	draw_rect(Rect2(0, 400, 2000, 80), Color.DARK_GREEN)
+"
+
+[sub_resource type="GDScript" id="GDScript_0e48y"]
+script/source = "extends Camera2D
+
+@export var scroll_speed := 100.0
+
+func _process(delta):
+	position.x += scroll_speed * delta
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
 size = Vector2(125, 126)
@@ -10,6 +44,23 @@ size = Vector2(125, 126)
 size = Vector2(1721, 119)
 
 [node name="main-scene" type="Node2D" unique_id=1039913588]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=789415722]
+offset_left = -270.0
+offset_top = -195.0
+offset_right = 1451.0
+offset_bottom = 683.0
+
+[node name="Parallax2D" type="Parallax2D" parent="ColorRect" unique_id=1697194300]
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect/Parallax2D" unique_id=1366853781]
+script = SubResource("GDScript_0hol4")
+
+[node name="Node2D" type="Node2D" parent="ColorRect/Parallax2D" unique_id=1102437467]
+
+[node name="Camera2D" type="Camera2D" parent="ColorRect" unique_id=1379060436]
+position = Vector2(841, 517)
+script = SubResource("GDScript_0e48y")
 
 [node name="PlayerCharacterBody2D" type="CharacterBody2D" parent="." unique_id=1195590722]
 script = ExtResource("1_0e48y")
@@ -29,3 +80,6 @@ position = Vector2(588, 601)
 shape = SubResource("RectangleShape2D_0e48y")
 
 [node name="GndSprite2D" type="Sprite2D" parent="GndCharacterBody2D2" unique_id=1106481670]
+position = Vector2(534.00006, 485)
+scale = Vector2(7.05, 1.4)
+texture = ExtResource("3_epypp")
