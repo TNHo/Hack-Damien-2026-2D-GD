@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2dSideScroller"
-run/main_scene="uid://txbbrd0dyla4"
+run/main_scene="uid://c276p4o3mkfsf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
