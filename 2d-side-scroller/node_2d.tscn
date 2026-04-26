@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c276p4o3mkfsf"]
 
 [ext_resource type="Script" uid="uid://cnbg36e1u0pvo" path="res://character_body_2d.gd" id="1_0e48y"]
-[ext_resource type="Texture2D" uid="uid://dlh2534rwc6d8" path="res://icon.svg" id="2_epypp"]
+[ext_resource type="Texture2D" uid="uid://cr5ma0h41ljrf" path="res://placeholder.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://b5625cm1k4s85" path="res://ground.png" id="3_epypp"]
 
 [sub_resource type="GDScript" id="GDScript_0hol4"]
@@ -71,7 +71,8 @@ script = SubResource("GDScript_0e48y")
 script = ExtResource("1_0e48y")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="MarginContainer/PlayerCharacterBody2D" unique_id=73001522]
-position = Vector2(362, 267)
+position = Vector2(364, 268.75)
+scale = Vector2(0.14420804, 0.16115703)
 texture = ExtResource("2_epypp")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="MarginContainer/PlayerCharacterBody2D" unique_id=830194376]
