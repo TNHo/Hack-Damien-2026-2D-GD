@@ -71,11 +71,11 @@ script = SubResource("GDScript_0e48y")
 script = ExtResource("1_0e48y")
 
 [node name="PlayerSprite2D" type="Sprite2D" parent="MarginContainer/PlayerCharacterBody2D" unique_id=73001522]
-position = Vector2(229, 249)
+position = Vector2(362, 267)
 texture = ExtResource("2_epypp")
 
 [node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="MarginContainer/PlayerCharacterBody2D" unique_id=830194376]
-position = Vector2(230, 248)
+position = Vector2(365, 269)
 shape = SubResource("RectangleShape2D_0hol4")
 
 [node name="GndCharacterBody2D2" type="CharacterBody2D" parent="MarginContainer" unique_id=1044622508]
